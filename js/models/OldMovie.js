@@ -1,6 +1,8 @@
 // constructor pattern
 class OldMovie {
     constructor(data) {
+        //_valeur est une propriétée privée, on a donc besoin d'accesseur pour les recuperer
+        //la recuperation à l'exterieur de la classe des propriéte se fait par les accesseurs 
         this._duration = data.duration;
         this._title = data.title;
         this._synopsis = data.synopsis;
