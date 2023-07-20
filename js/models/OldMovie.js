@@ -1,4 +1,3 @@
-class OldMovie {
 // constructor pattern
 class OldMovie {
     constructor(data) {
@@ -9,7 +8,7 @@ class OldMovie {
         this._picture = data.picture;
 }
 
-// getter qui nous permet d'acceder aux propriete de l'objet
+// getter qui nous permet d'acceder aux proprietes de l'objet (assesseurs)
 get duration(){
     return this._duration;
 }
@@ -28,7 +27,9 @@ get released_in(){
 
 // retourne le chemin complet de l'image
 get picture(){
-    return `/assets/${this._picture}`;
+    const image = `/assets/${this._picture}`
+    // console.log(image)
+    return image;
 }
 
 get thumnail(){
@@ -38,4 +39,4 @@ get thumnail(){
 }
 
 // reste a instantier l'objet
-}
+

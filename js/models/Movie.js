@@ -1,4 +1,3 @@
-class Movie {
 //constructor pattern
 class Movie {
     constructor(data) {
@@ -45,6 +44,7 @@ get picture(){
     return `/assets/${this._picture}`;
 }
 
+// ${this._picture} qui correspond au nom de l'image
 get thumnail(){
     return `/assets/thumbnails/${this._picture}`;
 }
@@ -52,4 +52,4 @@ get thumnail(){
 }
 
 //reste a instantire l'objet
-}
+
