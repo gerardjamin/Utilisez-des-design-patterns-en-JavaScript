@@ -1,6 +1,7 @@
 class MovieCard {
     constructor(movie) {
         this._movie = movie
+        console.log(movie)
     }
 
     createMovieCard() {
@@ -25,4 +26,5 @@ class MovieCard {
         $wrapper.innerHTML = movieCard
         return $wrapper
     }
+    
 }
