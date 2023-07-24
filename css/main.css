@@ -48,5 +48,5 @@ body {
 
 .fade-in {
     opacity: 0;
-    transition: .4s;
+    transition: 1s;
 }
