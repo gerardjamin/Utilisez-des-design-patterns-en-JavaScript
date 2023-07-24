@@ -8,35 +8,35 @@ class Form {
         this.$wrapper
             .querySelector('form')
             .addEventListener('submit', e => {
+                //evite le rechargement de la page
                 e.preventDefault()
 
                 const firstNameInputValue = this
                     .$wrapper
                     .querySelector('#firstname')
                     .value
-                
+
                 const lastNameInputValue = this
                     .$wrapper
                     .querySelector('#lastname')
                     .value
-
-                const user = new User({
-                    firstName: firstNameInputValue,
-                    lastName: lastNameInputValue
-                })
+                //creation de l'objet user = {firstName:firstNameInputValue ,lastName: lastNameInputValue}
+                const userData = {firstName:firstNameInputValue , lastName: lastNameInputValue}
+                const user = new User(userData)
+                // const user = new User({
+                //     firstName: firstNameInputValue,
+                //     lastName: lastNameInputValue
+                // })
 
                 if (user.user) {
                     this.$modalWrapper.classList.remove('modal-on')
                     this.$modalWrapper.innerHTML = ""
-                } 
-                    
+                }
+
             })
     }
 
-    shouldDisplayForm() {
-        const user = new User()
-        return !user.user
-    }
+
 
     createForm() {
         const form = `
@@ -55,13 +55,21 @@ class Form {
         this.$wrapper.innerHTML = form
 
         this.$modalWrapper.classList.add('modal-on')
-        this.$modalWrapper.appendChild(this.$wrapper)   
+        this.$modalWrapper.appendChild(this.$wrapper)
     }
 
+    //affichage de la modale si l'user n'est pas enregistré
     render() {
         if (this.shouldDisplayForm()) {
             this.createForm()
             this.onSubmitForm()
         }
+    }
+
+    shouldDisplayForm() {
+        const user = new User()
+        const boolean = user.user
+        //si user n'existe pas cad !boolean = vrai alors on affiche la modale
+        return !boolean
     }
 }

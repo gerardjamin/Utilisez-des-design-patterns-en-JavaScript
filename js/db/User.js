@@ -1,20 +1,24 @@
 class User {
-    constructor(data) {
+    constructor(userData) {
+
+        
+        //si le prototype existe 
         if (User.exists) {
             return User.instance
-        } else if (data && data.firstName && data.lastName) {
+        } else if (userData && userData.firstName && userData.lastName) {
             // Si firstName et lastName sont définis au moment de l'instanciation
 
             // J'initialise les propriétés firstName et lastName
-            this._firstName = data.firstName
-            this._lastName = data.lastName
+            this._firstName = userData.firstName
+            this._lastName = userData.lastName
 
-            // Je les sauvegarde en Local Storage
+            // je sauvegarde l'objet courant dans le local storage
             this.saveToLocalStorage()
 
             // Je "lock" l'objet
             User.instance = this
             User.exists = true
+            //retourne cet objet
             return this
         }
     }
