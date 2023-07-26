@@ -16,6 +16,8 @@ class App {
 
         const FullMovies = Movies.concat(ExternalMovies)
 
+        console.log(FullMovies)
+        
         //creation de l'objet form
         const ModalForm = new Form()
         
