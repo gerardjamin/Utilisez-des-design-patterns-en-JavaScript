@@ -1,3 +1,4 @@
+//design pattern Decorateur (ajouter une propriete ou une methode a l'objet)
 class User {
     constructor(firstName,lastName){
         this._firstName = firstName
