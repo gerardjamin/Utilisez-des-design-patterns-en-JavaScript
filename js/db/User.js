@@ -1,13 +1,17 @@
 class User {
-    constructor(data) {
+    constructor(dataUser) {
+
+        //testons si le prototype existe
         if (User.exists) {
             return User.instance
-        } else if (data && data.firstName && data.lastName) {
-            // Si firstName et lastName sont définis au moment de l'instanciation
+
+             // Si firstName et lastName sont définis au moment de l'instanciation
+        } else if (dataUser && dataUser.firstName && dataUser.lastName) {
+           
 
             // J'initialise les propriétés firstName et lastName
-            this._firstName = data.firstName
-            this._lastName = data.lastName
+            this._firstName = dataUser.firstName
+            this._lastName = dataUser.lastName
 
             // Je les sauvegarde en Local Storage
             this.saveToLocalStorage()
