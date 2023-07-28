@@ -37,6 +37,7 @@ class PlayerModal {
         this.onCloseButton()
     }
 
+    //lancement du player
     render() {
         this.createPlayer()
     }

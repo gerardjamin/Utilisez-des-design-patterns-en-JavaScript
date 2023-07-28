@@ -8,19 +8,23 @@ class App {
     }
 
     async main() {
-        const moviesData = await this.moviesApi.get()
+        const moviesData = await this.moviesApi.get() 
         const externalMoviesData = await this.externalMoviesApi.get()
-
+        
         const Movies = moviesData.map(movie => new MoviesFactory(movie, 'newApi'))
+        console.table(Movies)
         const ExternalMovies = externalMoviesData.map(movie => new MoviesFactory(movie, 'externalApi'))
-
+        
         const FullMovies = Movies.concat(ExternalMovies)
+       
 
 
         const Form = new FormModal()
+        //appel de la modale
         Form.render()
 
         const Filter = new FilterForm(FullMovies)
+        //appel du filtre
         Filter.render()
 
         FullMovies.forEach(movie => {
