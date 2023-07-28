@@ -13,9 +13,10 @@ class SorterForm {
         this.clearMoviesWrapper()
 
         if (!!sorter) {
+            
             // Vous pourrez supprimer cette ligne
-            const sortedData = await RatingSorterApi.sorter(this.Movies, sorter)
-
+            // const sortedData = await RatingSorterApi.sorter(this.Movies, sorter)
+            const sortedData = await this.ProxyRatingSorter.sorter(this.Movies, sorter)
             const SortedMovies = sortedData.data 
 
             SortedMovies.forEach(Movie => {
