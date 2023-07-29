@@ -4,6 +4,7 @@ class ApiV2 {
      * @param {string} url 
      * @returns 
      */
+    //methode statique !
     static async get(url) {
         return fetch(url)
             .then(res => res.json())
