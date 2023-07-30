@@ -1,6 +1,7 @@
 class MovieCard {
-    constructor(movie) {
+    constructor(movie, wishListSubject) {
         this._movie = movie
+        this.wishListSubject = wishListSubject
 
         this.$wrapper = document.createElement('div')
         this.$wrapper.classList.add('movie-card-wrapper')
@@ -11,6 +12,23 @@ class MovieCard {
     }
 
     handleWishButton() {
+        const that = this
+        this.$wrapper
+            .querySelector('.wish-btn')
+            .addEventListener('click', function () {
+
+                if (this.classList.contains('whished')) {
+                    console.log(this.classList.contains('whished'))
+                    this.classList.remove('whished')
+                    that.wishListSubject.fire('DEC')
+                    //console.log("coucouDEC")
+                } else {
+                    this.classList.add('whished')
+                    that.wishListSubject.fire('INC')
+                    //console.log("coucouINC")
+                }
+            })
+
     }
 
     createMovieCard() {
@@ -35,7 +53,7 @@ class MovieCard {
                 <span>${this._movie.duration}</span>
             </p>
         `
-        
+
         this.$wrapper.innerHTML = movieCard
         this.handleWishButton()
 
