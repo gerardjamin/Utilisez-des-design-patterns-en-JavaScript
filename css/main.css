@@ -76,8 +76,9 @@ body {
     transition: .4s;
 }
 
+/*des que la classe est créée par movieCard elle sera teintée en rouge (coeur)*/
 .wish-btn.wished path  {
-    fill: tomato;
+    fill: rgb(92, 255, 71);
     stroke: #fff;
 }
 
