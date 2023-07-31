@@ -9,7 +9,7 @@ class User {
             this._firstName = data.firstName
             this._lastName = data.lastName
 
-            // Je les sauvegarde en Local Storage
+            // Je les sauvegarde en Local Storage pour ne plus voir apparaitre la modale de connection
             this.saveToLocalStorage()
 
             // Je "lock" l'objet

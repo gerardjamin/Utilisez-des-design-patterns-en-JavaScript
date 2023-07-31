@@ -9,7 +9,7 @@ class App {
         // Movies
         this.FullMovies = []
 
-        // WishLib Pub/sub
+        // WishLib subscribe/compteur
         this.WishlistSubject = new WishlistSubject()
         this.WhishListCounter = new WhishListCounter()
 
