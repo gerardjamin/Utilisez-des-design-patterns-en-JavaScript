@@ -12,31 +12,31 @@ class MovieCard {
     }
 
 
-    handleWishButton () {
-
+    handleWishButton() {
+        //sauvegarde du contexte avant d'entrer dans l'objet .wish-btn
         const that = this
-    
-        console.log('part1',this)
+
+        console.log('part1', this)
         const selector = this.$wrapper
             .querySelector('.wish-btn')
-        console.log('part2',this)
+        console.log('part2', this)
 
         selector.addEventListener('click', function () {
-        console.log('part3',this)
-        
-                if (this.classList.contains('whished')) {
-                    this.classList.remove('whished')
+            console.log('part3', this)
+            //on est dans un autre objet que movieCard
+            if (this.classList.contains('whished')) {
+                this.classList.remove('whished')
 
-                    that.wishListSubject.fire('DEC')
+                that.wishListSubject.fire('DEC')
 
-                   
-                } else {
-                    this.classList.add('whished')
 
-                    that.wishListSubject.fire('INC')
-                  
-                }
-            })
+            } else {
+                this.classList.add('whished')
+
+                that.wishListSubject.fire('INC')
+
+            }
+        })
 
     }
 
