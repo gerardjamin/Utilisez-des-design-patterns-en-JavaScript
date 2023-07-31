@@ -2,8 +2,8 @@ class UserContext {
     constructor() {
         //etape potentielle de mon utilisateur
         this.states = [
-            new UserConnectedState(),
-            new AnonymousUserState()
+            new AnonymousUserState(),
+            new UserConnectedState()
         ]
 
         this.currentState = this.getInitialState()
@@ -23,7 +23,7 @@ class UserContext {
     }
 
     change(firstName, lastName) {
-
+        
         const user = new User({ firstName, lastName })
         this.currentState = this.states[1]
     }
