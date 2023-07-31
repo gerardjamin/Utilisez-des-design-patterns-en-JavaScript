@@ -8,10 +8,10 @@ class App {
 
         //WishList pub/sub
         this.wishListSubject = new WishlistSubject()
-        this.WhishListCounter = new WhishListCounter()
+        this.whishListCounter = new WhishListCounter()
 
         //souscription 
-        this.wishListSubject.subscribe(this.WhishListCounter)
+        this.wishListSubject.subscribe(this.whishListCounter)
 
     }
 

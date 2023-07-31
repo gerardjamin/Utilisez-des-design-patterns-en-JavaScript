@@ -2,7 +2,7 @@ class WhishListCounter {
 
     constructor() {
         this._count = 0
-        this._$whishCount = document.querySelectorAll(".wish-count")
+        this._$whishCount = document.querySelector(".wish-count")
     }
 
     update(action) {
@@ -17,11 +17,9 @@ class WhishListCounter {
             throw ('Unknow action')
         }
         
-        // this._$whishCount.innerHTML  = this._count
-        // this._$whishCount.innerHTML  = 'gerard'
-        let essai = document.querySelectorAll(".wish-count")
-        essai.innerHTML = 'gerard'
-        console.log(this._count)
-        console.log(essai)
+        this._$whishCount.innerHTML  = this._count
+      
+        // console.log(this._count)
+       
     }
 }

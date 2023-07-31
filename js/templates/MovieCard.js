@@ -11,27 +11,37 @@ class MovieCard {
         return this._movie
     }
 
-    handleWishButton() {
-        const that = this
-        this.$wrapper
-            .querySelector('.wish-btn')
-            .addEventListener('click', function () {
 
+    handleWishButton () {
+
+        const that = this
+    
+        console.log('part1',this)
+        const selector = this.$wrapper
+            .querySelector('.wish-btn')
+        console.log('part2',this)
+
+        selector.addEventListener('click', function () {
+        console.log('part3',this)
+        
                 if (this.classList.contains('whished')) {
-                    console.log(this.classList.contains('whished'))
                     this.classList.remove('whished')
+
                     that.wishListSubject.fire('DEC')
-                    //console.log("coucouDEC")
+
+                   
                 } else {
                     this.classList.add('whished')
+
                     that.wishListSubject.fire('INC')
-                    //console.log("coucouINC")
+                  
                 }
             })
 
     }
 
     createMovieCard() {
+
         const movieCard = `
             <div class="movie-thumbnail center">
                 <img
