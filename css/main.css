@@ -76,8 +76,8 @@ body {
     transition: .4s;
 }
 
-.wish-btn.wished path  {
-    fill: tomato;
+.wish-btn.whished path  {
+    fill: rgb(92, 255, 71);
     stroke: #fff;
 }
 
