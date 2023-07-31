@@ -1,5 +1,28 @@
+
+//state pattern
+
 class UserConnectedState {
+
+    constructor() {
+        this.isConnected = true
+        this.User = new User()
+    }
+
+    getUser() {
+        // return new User()
+        return this.User
+    }
 }
 
 class AnonymousUserState {
+
+    constructor() {
+        this.isConnected = false
+        this.User = new User()
+    }
+
+    getUser() {
+        // return new User()
+        return this.User
+    }
 }
