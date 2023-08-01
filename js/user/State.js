@@ -9,8 +9,8 @@ class UserConnectedState {
     }
 
     getUser() {
-        return new User()
-        //return this.User
+        //return new User()
+        return this.User
     }
 }
 
@@ -22,7 +22,7 @@ class AnonymousUserState {
     }
 
     getUser() {
-        return new User()
-        //return this.User
+        //return new User()
+        return this.User
     }
 }
