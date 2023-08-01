@@ -1,6 +1,8 @@
+//partie statique de objet User
 class User {
     constructor(data) {
         if (User.exists) {
+            //retour de l'objet User
             return User.instance
         } else if (data && data.firstName && data.lastName) {
             // Si firstName et lastName sont définis au moment de l'instanciation
@@ -19,6 +21,8 @@ class User {
         }
     }
 
+    //=============================partie dynamique de l'objet User==============
+//ensemble des geters 
     get firstName() {
         return this._firstName
     }
@@ -28,7 +32,7 @@ class User {
     }
 
     get user() {
-        // Vérifie si firstName et lastName existent soit au sein de la classe, soit en LocalStorage
+        // Vérifie si firstName et lastName existent soit au sein de l'objet User, soit en LocalStorage
         const firstName = this._firstName || localStorage.getItem('firstName')
         const lastName = this._lastName || localStorage.getItem('lastName')
 

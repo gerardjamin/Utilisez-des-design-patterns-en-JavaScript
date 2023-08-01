@@ -1,11 +1,13 @@
 class UserContext {
     constructor() {
+        //etats initiaux possibles de l'utilisateur
         this.states = [new AnonymousUserState(), new UserConnectedState()]
         this.currentState = this.getInitialState()
     }
 
     getInitialState() {
         const user = new User()
+        //recuperation des elements du tableau
         const [ AnonymousUserState, UserConnectedState ] = this.states
 
         if (!user.user) {

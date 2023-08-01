@@ -2,7 +2,7 @@ class App {
     constructor() {
         this.$moviesWrapper = document.querySelector('.movies-wrapper')
         this.$modalWrapper = document.querySelector('.modal')
-        
+
         this.moviesApi = new MovieApi('/data/new-movie-data.json')
         this.externalMoviesApi = new MovieApi('/data/external-movie-data.json')
 
@@ -12,7 +12,8 @@ class App {
         // WishLib Pub/sub
         this.WishlistSubject = new WishlistSubject()
         this.WhishListCounter = new WhishListCounter()
-
+        
+        //on souscrit à l'action à faire (ici, dec/inc compteur)
         this.WishlistSubject.subscribe(this.WhishListCounter)
 
         // UserContext
@@ -45,13 +46,13 @@ class App {
         Search.render()
 
         this.FullMovies.forEach(movie => {
-                const Template = movieCardWithPlayer(
-                    new MovieCard(movie, this.WishlistSubject)
-                )
+            const Template = movieCardWithPlayer(
+                new MovieCard(movie, this.WishlistSubject)
+            )
 
-                this.$moviesWrapper.appendChild(
-                    Template.createMovieCard()
-                )
+            this.$moviesWrapper.appendChild(
+                Template.createMovieCard()
+            )
         })
     }
 }
