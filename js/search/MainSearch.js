@@ -6,7 +6,7 @@ class Search {
 
     search(query) {
         //appel de la methode filterMovies()
-        return this.filterMovies()
+        return this.filterMovies(query)
     }
 }
 
