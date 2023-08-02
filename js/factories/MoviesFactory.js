@@ -1,3 +1,4 @@
+//factorie pattern
 class MoviesFactory {
 
     constructor(data, type) {
