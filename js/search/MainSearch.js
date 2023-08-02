@@ -1,3 +1,4 @@
+//classe abstraite (sert d' heritage pour les objets)
 class Search {
 
     constructor(Movies) {
