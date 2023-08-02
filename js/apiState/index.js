@@ -1,5 +1,8 @@
+
+//state pattern (gèrer les etats de l'application)
 class Context {
     constructor() {
+        //objet d'etats possibles de l'application
         this._states = [
             new InitialState(),
             new ErrorState(),
@@ -9,6 +12,19 @@ class Context {
     }
 
     change(status) {
+
+        const [
+            InitialState,
+            ErrorState,
+            SuccessState
+        ] = this._states
+
+        if (status === 'error') {
+            this.currentState = ErrorState
+        } else if (status === 'success') {
+            this.currentState = SuccessState
+        }
+
     }
 
     get state() {
